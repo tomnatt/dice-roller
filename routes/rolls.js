@@ -3,17 +3,21 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+  var x = 8;
+  var number = rollDX(x)
+
   var output = {};
-  var number = 9;
   output.number = number;
   res.json(output);
 });
 
 module.exports = router;
 
+function rollDX(max) {
+  var min = 1;
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
-// 1. return a number in json form
-// 2. return a random number in json form
-// 3. dice rolling
+// 3. dice rolling from parameter
 // 4. dice rolling with modifiers
 // 5. support other rolling systems
