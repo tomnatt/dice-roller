@@ -5,14 +5,22 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
 
   // var parts = splitRoll(req.query.roll);
-
-  rollDice(req.query.roll);
-
-  var x = 6;
-  var number = rollDX(x)
+  var result = rollDice(req.query.roll);
+  console.log(result);
 
   var output = {};
-  output.number = number;
+  output.result = result;
+
+  output.result1 = rollDice(req.query.roll);
+  output.result2 = rollDice(req.query.roll);
+  output.result3 = rollDice(req.query.roll);
+  output.result4 = rollDice(req.query.roll);
+  output.result5 = rollDice(req.query.roll);
+  output.result6 = rollDice(req.query.roll);
+  output.result7 = rollDice(req.query.roll);
+  output.result8 = rollDice(req.query.roll);
+  output.result9 = rollDice(req.query.roll);
+  output.result0 = rollDice(req.query.roll);
 
   // output.parts = parts;
   res.json(output);
@@ -29,13 +37,15 @@ function rollDX(max) {
 // rolls a collection of dice (eg 2d6)
 function rollDice(roll) {
   var bits = roll.split("d");
-
-  var number = bits[0];
+  var number = (bits[0] == "" ? 1 : bits[0]);
   var dice = bits[1];
 
-  number = (number == "" ? 1 : number);
-  console.log("Number: " + number);
-  console.log("Type: " + dice);
+  var total = 0;
+  for (i = 0; i < number; i++) {
+    total += rollDX(dice);
+  }
+
+  return total;
 }
 
 function splitRoll(roll) {
