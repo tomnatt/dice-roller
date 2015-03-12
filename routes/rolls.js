@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  var x = 8;
+  var x = req.query.roll;
   var number = rollDX(x)
 
   var output = {};
@@ -18,6 +18,6 @@ function rollDX(max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-// 3. dice rolling from parameter
+// 3. multiple dice rolling from parameter
 // 4. dice rolling with modifiers
 // 5. support other rolling systems
