@@ -3,7 +3,7 @@ var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
-var rolls = require('./routes/rolls');
+var rolls = require('./routes/index');
 var app = express();
 
 // view engine setup
