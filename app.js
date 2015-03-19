@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 var rolls = require('./routes/index');
+var experiment = require('./routes/experiment');
 var app = express();
 
 // view engine setup
@@ -18,6 +19,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', rolls);
+app.use('/experiment', experiment);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
