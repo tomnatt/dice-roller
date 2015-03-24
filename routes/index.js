@@ -55,7 +55,3 @@ function splitRoll(roll) {
   return compenents;
 
 }
-
-// 3. multiple dice rolling from parameter
-// 4. dice rolling with modifiers
-// 5. support other rolling systems
