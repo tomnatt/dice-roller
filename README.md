@@ -6,6 +6,7 @@ Roll dice. Pass dice and modifier and get a result. Written mostly for experienc
 
 * `npm install`
 * `npm start`
+* `npm test`
 
 Or, for auto-reloading use `nodemon`:
 
