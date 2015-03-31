@@ -4,26 +4,28 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
-  // var parts = splitRoll(req.query.roll);
-  var result = rollDice(req.query.roll);
+  // default to a d6
+  var roll = (typeof req.query.roll !== 'undefined' ? req.query.roll : 'd6');
+  var result = rollDice(roll);
   console.log(result);
 
   var output = {};
   output.result = result;
 
-  output.result1 = rollDice(req.query.roll);
-  output.result2 = rollDice(req.query.roll);
-  output.result3 = rollDice(req.query.roll);
-  output.result4 = rollDice(req.query.roll);
-  output.result5 = rollDice(req.query.roll);
-  output.result6 = rollDice(req.query.roll);
-  output.result7 = rollDice(req.query.roll);
-  output.result8 = rollDice(req.query.roll);
-  output.result9 = rollDice(req.query.roll);
-  output.result0 = rollDice(req.query.roll);
+  output.result1 = rollDice(roll);
+  output.result2 = rollDice(roll);
+  output.result3 = rollDice(roll);
+  output.result4 = rollDice(roll);
+  output.result5 = rollDice(roll);
+  output.result6 = rollDice(roll);
+  output.result7 = rollDice(roll);
+  output.result8 = rollDice(roll);
+  output.result9 = rollDice(roll);
+  output.result0 = rollDice(roll);
 
   // output.parts = parts;
-  res.json(output);
+  res.setHeader('Content-Type', 'application/json');
+  res.end(JSON.stringify(output));
 });
 
 module.exports = router;
