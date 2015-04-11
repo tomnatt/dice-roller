@@ -7,11 +7,16 @@ Roll dice. Pass dice and modifier and get a result. Written mostly for experienc
 * `npm install`
 * `npm start`
 * `npm test`
+* 'npm run coverage'
 
 Or, for auto-reloading use `nodemon`:
 
 * `npm install nodemon --global`
 * `nodemon server.js`
+
+## Testing
+
+Testing is done using Mocha and Chai. Coverage is checked using Istanbul.
 
 ## To do
 
