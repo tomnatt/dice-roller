@@ -13,23 +13,23 @@ describe('test the luck object', function() {
     expect(luck2.luck_string).to.equal('3d10+5');
   });
 
-  it('sets the luck parser correctly', function() {
+  it('defaults the luck parser correctly', function() {
     var luck1 = new Luck('2d6+1');
     expect(luck1.luck_parser).to.be.an.instanceOf(BasicLuckParser);
   });
 
-  // it('sets the luck roller correctly', function() {
-
-  // });
+  it('sets the luck parser correctly', function() {
+    var luck1 = new Luck('2d6+1', new BasicLuckParser());
+    expect(luck1.luck_parser).to.be.an.instanceOf(BasicLuckParser);
+  });
 
   // it('defaults the luck parser correctly', function() {
 
   // });
 
-  it('defaults the luck parser correctly', function() {
-    var luck1 = new Luck('2d6+1');
-    expect(luck1.luck_parser).to.be.an.instanceOf(BasicLuckParser);
-  });
+  // it('sets the luck roller correctly', function() {
+
+  // });
 
   // it('rolls correctly', function() {
 
