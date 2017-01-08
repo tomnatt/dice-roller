@@ -9,7 +9,7 @@ Assumes node and yarn are installed.
 * `yarn install`
 * `yarn start`
 * `yarn test`
-* 'yarn run coverage'
+* `yarn run coverage`
 
 Or, for auto-reloading use `nodemon`:
 
