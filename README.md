@@ -4,14 +4,16 @@ Roll dice. Pass dice and modifier and get a result. Written mostly for experienc
 
 ## Commands
 
-* `npm install`
-* `npm start`
-* `npm test`
-* 'npm run coverage'
+Assumes node and yarn are installed.
+
+* `yarn install`
+* `yarn start`
+* `yarn test`
+* 'yarn run coverage'
 
 Or, for auto-reloading use `nodemon`:
 
-* `npm install nodemon --global`
+* `yarn install nodemon --global`
 * `nodemon server.js`
 
 ## Testing
