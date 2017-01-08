@@ -65,6 +65,22 @@ describe('test the basic luck parser', function() {
     expect(basic_luck_parser_3.result[0]).to.eql([new Dice(4), -1]);
     expect(basic_luck_parser_3.result[1]).to.eql([3, 1]);
     expect(basic_luck_parser_3.result[2]).to.eql([6, -1]);
+
+    var basic_luck_parser_4 = new BasicLuckParser('-2+d4');
+    basic_luck_parser_4.parseLuckString();
+    expect(basic_luck_parser_4.result).to.be.an.instanceOf(Array);
+    expect(basic_luck_parser_4.result).to.have.length(2);
+    expect(basic_luck_parser_4.result[0]).to.eql([2, -1]);
+    expect(basic_luck_parser_4.result[1]).to.eql([new Dice(4), 1]);
+
+    var basic_luck_parser_5 = new BasicLuckParser('3d8');
+    basic_luck_parser_5.parseLuckString();
+    expect(basic_luck_parser_5.result).to.be.an.instanceOf(Array);
+    expect(basic_luck_parser_5.result).to.have.length(3);
+    expect(basic_luck_parser_5.result[0]).to.eql([new Dice(8), 1]);
+    expect(basic_luck_parser_5.result[1]).to.eql([new Dice(8), 1]);
+    expect(basic_luck_parser_5.result[2]).to.eql([new Dice(8), 1]);
+
   });
 
 });

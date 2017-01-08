@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
   // default to a d6
   var roll = (typeof req.query.roll !== 'undefined' ? req.query.roll : 'd6');
   var result = rollDice(roll);
-  console.log(result);
+  // console.log(result);
 
   var output = {};
   output.result = result;
