@@ -3,8 +3,8 @@ var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
-var rolls = require('./routes/index');
-var experiment = require('./routes/experiment');
+var rolls = require('./routes/index'); // doesn't use any of the additional libraries
+var experiment = require('./routes/experiment'); // only uses the Dice object
 var app = express();
 
 // view engine setup

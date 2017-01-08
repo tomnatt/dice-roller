@@ -45,6 +45,7 @@ describe('test the basic luck parser', function() {
     expect(basic_luck_parser_1.result).to.have.length(4);
     expect(basic_luck_parser_1.result[0]).to.eql([new Dice(6), 1]);
     expect(basic_luck_parser_1.result[1]).to.eql([new Dice(10), 1]);
+    expect(basic_luck_parser_1.result[2]).to.eql([new Dice(10), 1]);
     expect(basic_luck_parser_1.result[3]).to.eql([3, 1]);
 
     var basic_luck_parser_2 = new BasicLuckParser('d4+3d10-1d8+3-6');

@@ -29,6 +29,7 @@ describe('test the luck object', function() {
   it('defaults the luck parser correctly', function() {
     // default when not specified
     var luck1 = new Luck('2d6+1');
+    expect(luck1.luck_parser).to.be.an.instanceOf(BasicLuckParser);
     expect(luck1.luck_roller).to.be.an.instanceOf(d20Roller);
 
     // default when null passed
